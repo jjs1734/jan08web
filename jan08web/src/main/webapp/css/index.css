@@ -10,13 +10,15 @@ article{
 	margin-top: 50px;
 }
 footer {
-	position: fixed;
-	bottom: 0;
-	width: 100%;
-	height: 30px;
-	background-color: gray;
-	line-height: 30px;
-	text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 40px; /* 조정된 높이 */
+    background-color: #00c73c; /* 네이버와 유사한 녹색 색상 */
+    line-height: 40px; /* 조정된 line-height */
+    text-align: center;
+    color: white; /* 글자 색상 추가 */
+    font-size: 14px; /* 폰트 크기 추가 */
 }
 .mainStyle {
 	width: 900th;

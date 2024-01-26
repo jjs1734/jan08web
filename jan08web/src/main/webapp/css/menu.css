@@ -1,31 +1,44 @@
 @charset "UTF-8";
+
 nav {
-	width: 100%;
-	height: 50px;
-	margin: 0 auto;
-	background-color: black;
-	overflow: hidden;
-	position: fixed;
-	top: 0;
+    width: 100%;
+    height: 40px; /* 조정된 높이 */
+    margin: 0 auto;
+    background-color: #00c73c; /* 네이버와 유사한 녹색 색상 */
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center; /* 메뉴를 가운데로 정렬 */
 }
-nav ul{
-	margin: 0;
-	padding: 0;
-	list-style: none;
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    height: 100%;
 }
-nav ul li{
-	margin: 0;
-	padding: 0;
-	min-width: 50px;
-	padding: 0px 10px;
-	height: 100%;
-	display: inline-block;
-	color: white;
-	line-height: 30px;
-	text-align: center;
-	margin-top: 10px;
-	margin-left: 10px;	
+
+nav ul li {
+    margin: 0 10px; /* 조정된 간격 */
+    padding: 0;
+    min-width: 100px; /* 조정된 너비 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold; /* 폰트를 bold로 설정 */
+    transition: background-color 0.3s ease;
 }
-nav ul li:hover{
-	background-color: gray;
+
+nav ul li:hover {
+    background-color: #009032; /* 어두운 녹색 색상으로 변경 */
+}
+
+nav ul li.active {
+    background-color: #009032;
 }

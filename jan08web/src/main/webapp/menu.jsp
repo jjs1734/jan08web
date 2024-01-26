@@ -11,6 +11,7 @@
 		<li onclick="url('./bootstrap')">ブートストラップ</li>
 		<li onclick="url('./info')">情報</li>
 		<li onclick="url('./team')">team</li>
+		<li onclick="url('./coffee')">コーヒー</li>
 		<c:choose>
 			<c:when test="${sessionScope.mname eq null }">
 				<li onclick="url('./login')">ログイン</li>
@@ -20,5 +21,10 @@
 				<li onclick="url('./logout')">ログアウト</li>
 			</c:otherwise>
 		</c:choose>
+		<c:choose>
+			<c:when test="${sessionScope.mgrade eq '9' }">
+		<li onclick="url('./admin')">관리자</li>
+			</c:when>
+			</c:choose>
 	</ul>
 </nav>

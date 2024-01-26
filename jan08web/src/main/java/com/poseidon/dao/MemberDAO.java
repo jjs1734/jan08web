@@ -19,7 +19,7 @@ public class MemberDAO extends AbstractDAO{
 		Connection con = db.getConnection();
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "SELECT count(*) as count, mname FROM member WHERE mid=? AND mpw=?";
+		String sql = "SELECT count(*) as count, mname FROM member WHERE mid=? AND mpw=? AND mgrade >= 5";
 		
 		try {
 			pstmt = con.prepareStatement(sql);
@@ -148,6 +148,26 @@ public class MemberDAO extends AbstractDAO{
 		
 		
 		return data;
+	}
+
+	public int levelChange(MemberDTO dto) {
+		int result = 0;
+		Connection con = db.getConnection();
+		PreparedStatement pstmt = null;
+		String sql = "UPDATE member SET mgrade=? WHERE mno=?";
+		
+		try {
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, dto.getMgrade());
+			pstmt.setInt(2, dto.getMno());
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(null, pstmt, con);
+		}
+		
+		return result;
 	}
 
 }
